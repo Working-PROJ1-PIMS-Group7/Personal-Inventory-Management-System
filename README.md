@@ -6,3 +6,8 @@
 5. Then in the Terminal... run 'pip install tabulate'
 6. Run the Code
 
+
+#UPDATE 4/20/2024
+1. Functions done
+2. database done
+3. gui half finished
