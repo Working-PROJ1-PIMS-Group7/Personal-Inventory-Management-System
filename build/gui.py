@@ -5,6 +5,7 @@ from tkinter import messagebox
 from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 import database
+from Python import Main
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\paule\OneDrive\Desktop\build\assets\frame0")
