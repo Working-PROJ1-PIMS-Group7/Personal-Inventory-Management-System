@@ -6,8 +6,19 @@
 5. Then in the Terminal... run 'pip install tabulate'
 6. Run the Code
 
+#GUI guide
+1. Download VS code
+2. Download build folder
+3. run cmd 'pip install customtkinter'
+4. run cmd 'pip install tkinter'
+
 
 #UPDATE 4/20/2024
 1. Functions done
 2. database done
 3. gui half finished
+
+
+
+
+NOTE: front end not yet connected
