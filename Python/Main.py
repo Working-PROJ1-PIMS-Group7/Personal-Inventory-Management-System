@@ -7,13 +7,10 @@ class ItemManager:
         self.items = []
 
     def add_item(self, name, quantity, importance, category):
-
         item_id = str(random.randint(1000, 9999))
-
         if importance.lower() not in ['low', 'medium', 'high']:
             print("Importance must be 'Low', 'Medium', or 'High'.")
             return
-
         item = {
             "Item ID": item_id,
             "Name": name,
@@ -30,26 +27,24 @@ class ItemManager:
             if item["Item ID"] == item_id:
                 item_index = index
                 break
-        
         if item_index != -1:
             self.items[item_index] = new_item
             print("Item edited successfully.")
         else:
             print("Item not found.")
-
+            
     def remove_item(self, item_id):
         item_index = -1
         for index, item in enumerate(self.items):
             if item["Item ID"] == item_id:
                 item_index = index
                 break
-        
         if item_index != -1:
             del self.items[item_index]
             print("Item removed successfully.")
         else:
             print("Item not found.")
-
+            
     def view_items(self):
         if self.items:
             headers = ["Item ID", "Name", "Quantity", "Importance", "Category"]
@@ -58,7 +53,6 @@ class ItemManager:
             print("2. Item Name")
             print("3. View All")
             search_choice = input("Enter your choice (1/2/3): ")
-
             if search_choice == "1":
                 existing_categories = set(item["Category"] for item in self.items)
                 print("Existing categories:")
@@ -109,10 +103,8 @@ class ItemManager:
 
 def main():
     data_filename = "items_data.json"  
-
     item_manager = ItemManager()
     item_manager.load_data(data_filename)
-
     while True:
         print("\nMenu:")
         print("1. Add Item")
@@ -121,9 +113,7 @@ def main():
         print("4. View Items")
         print("5. Save Data")
         print("6. Exit")
-
         choice = input("Enter your choice: ")
-
         if choice == "1":
             name = input("Enter the item name: ")
             quantity = int(input("Enter the quantity: "))
@@ -159,7 +149,6 @@ def main():
             break
         else:
             print("Invalid choice. Please enter a number between 1 and 6.")
-
 
 if __name__ == "__main__":
     main()
