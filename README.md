@@ -12,13 +12,22 @@
 3. run cmd 'pip install customtkinter'
 4. run cmd 'pip install tkinter'
 
-
 #UPDATE 4/20/2024
 1. Functions done
 2. database done
 3. gui half finished
 
 
+#UPDATE 4/25/24
+1. gui completeley finished
+2. functions connected to buttons
+3. front end connected to backend
+4. will do a guide on how to use the app
+
+
 
 
 NOTE: front end not yet connected
+NOTE: 4/25/24 FRONT END CONNECTED SUCCESSFULLY
+
+
