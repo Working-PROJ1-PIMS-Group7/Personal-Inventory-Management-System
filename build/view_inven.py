@@ -8,8 +8,6 @@ from pathlib import Path
 from tkinter import Toplevel, Entry, Button, StringVar, Label, Tk
 from tkinter.ttk import Combobox, Treeview
 import sqlite3
-import Main
-from Main import ItemManager, main
 import database
 import utils
 from utils import *
