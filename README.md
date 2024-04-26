@@ -9,8 +9,9 @@
 #GUI guide
 1. Download VS code
 2. Download build folder
-3. run cmd 'pip install customtkinter'
-4. run cmd 'pip install tkinter'
+3. run cmd 'python -m venv .venv'
+4. run cmd 'pip install customtkinter'
+5. run cmd 'pip install tkinter'
 
 #UPDATE 4/20/2024
 1. Functions done
