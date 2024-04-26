@@ -230,21 +230,28 @@ class InventoryWindow(Toplevel):
     #def sort_by_importance()
     
     def delete_item(self):
-        # Get the selected item from the treeview
-        selected_item = self.inventory_tree.selection()
+        # Get the selected items from the treeview
+        selected_items = self.inventory_tree.selection()
         
-        if not selected_item:
-            messagebox.showerror("Error", "Please select an item to delete.")
+        if not selected_items:
+            messagebox.showerror("Error", "Please select one or more items to delete.")
             return
-
-        # Get the item ID from the selected item
-        item_id = self.inventory_tree.item(selected_item, "values")[0]
-
-        # Delete item from the database
-        database.delete_item(item_id)
-
-        # Delete item from the treeview
-        self.inventory_tree.delete(selected_item)
+    
+        # Confirm deletion
+        confirm = messagebox.askyesno("Confirmation", "Are you sure you want to delete the selected items?")
+        if not confirm:
+            return
+    
+        # Iterate over selected items and delete them
+        for item in selected_items:
+            # Get the item ID from the selected item
+            item_id = self.inventory_tree.item(item, "values")[0]
+            
+            # Delete item from the database
+            database.delete_item(item_id)
+    
+            # Delete item from the treeview
+            self.inventory_tree.delete(item)
 
     def display_data(self):
         utils.display_data()
