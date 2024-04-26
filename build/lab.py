@@ -4,8 +4,6 @@ from tkinter import ttk
 import tkinter as tk
 from tkinter import messagebox
 import database 
-import Main
-from Main import ItemManager, main
 from tkinter.ttk import Combobox
 from view_inven import InventoryWindow 
 import random
