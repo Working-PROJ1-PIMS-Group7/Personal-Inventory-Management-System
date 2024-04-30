@@ -24,40 +24,6 @@ font4 = ('JosefinSansRoman Regular', 26, 'normal')
 lab_window = None  # Global variable to hold lab_window object
 
 
-def populate_entries_with_data(item_data):
-    id_entry.delete(0, END)
-    id_entry.insert(0, item_data["Item ID"])
-    
-    name_entry.delete(0, END)
-    name_entry.insert(0, item_data["Name"])
-    
-    qty_entry.delete(0, END)
-    qty_entry.insert(0, item_data["Quantity"])
-    
-    importance_combobox.set(item_data["Importance"])
-    
-    categ_entry.delete(0, END)
-    categ_entry.insert(0, item_data["Category"])
-
-
-def populate_entries_with_data(item_data):
-    id_entry.delete(0, END)
-    id_entry.insert(0, item_data["Item ID"])
-    
-    name_entry.delete(0, END)
-    name_entry.insert(0, item_data["Name"])
-    
-    qty_entry.delete(0, END)
-    qty_entry.insert(0, item_data["Quantity"])
-    
-    importance_combobox.set(item_data["Importance"])
-    
-    categ_entry.delete(0, END)
-    categ_entry.insert(0, item_data["Category"])
-
-
-
-
 def insert():
     id = id_entry.get()
     name = name_entry.get()
