@@ -35,6 +35,8 @@ def insert():
         messagebox.showerror('ERROR','ENTER ALL FIELDS')
     elif database.id_exist(id):
         messagebox.showerror('Error', 'ID already exists')
+    elif database.name_exist(name):
+        messagebox.showerror('Error', 'Item already exists')
     else:
         if not id:  # Check if id is empty
             id = str(random.randint(1000, 9999))  # Generate random id
