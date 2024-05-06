@@ -45,6 +45,14 @@ def update_item(new_name, new_stock, new_category, new_importance, id):
     conn.commit()
     conn.close()
 
+def name_exist(name):
+    conn = sqlite3.connect('Inventory.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM Inventory WHERE Name = ?', (name,))
+    result = cursor.fetchone()
+    conn.close()
+    return result is not None
+
 def id_exist(id):
     conn = sqlite3.connect('Inventory.db')
     cursor = conn.cursor()
