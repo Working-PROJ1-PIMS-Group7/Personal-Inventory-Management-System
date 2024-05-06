@@ -270,6 +270,7 @@ class InventoryWindow(Toplevel):
         # Populate Treeview with fetched items
         for item in items:
             self.inventory_tree.insert("", "end", values=item)
+            self.update_category_combobox()
 
 
 
@@ -385,4 +386,10 @@ class InventoryWindow(Toplevel):
         for item in items:
             self.inventory_tree.insert("", "end", values=item)
 
-
+    def update_category_combobox(self):
+        # Fetch updated category values from database
+        category_values = self.fetch_category_values()
+    
+        # Update category combobox
+        self.category_combobox['values'] = ["Select Category", *category_values]
+        self.category_combobox.set("Select Category")
