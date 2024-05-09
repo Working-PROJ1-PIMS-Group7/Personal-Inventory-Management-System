@@ -21,7 +21,7 @@ font2 = ('JosefinSansRoman Regular', 18, 'normal')
 font3 = ('JosefinSansRoman Regular', 13, 'bold')
 font4 = ('JosefinSansRoman Regular', 26, 'normal')
 
-lab_window = None  # Global variable to hold lab_window object
+lab_window = None  
 
 
 def insert():
@@ -38,8 +38,8 @@ def insert():
     elif database.name_exist(name):
         messagebox.showerror('Error', 'Item already exists')
     else:
-        if not id:  # Check if id is empty
-            id = str(random.randint(1000, 9999))  # Generate random id
+        if not id: 
+            id = str(random.randint(1000, 9999)) 
         try:
             qty = int(qty)
             database.insert_item(id, name, qty, importance, category)
@@ -54,9 +54,8 @@ def close_win():
 def view_invent():
 
     view_invent_window = InventoryWindow(master=app)
-    #app.withdraw()  # Hide the main window
-    view_invent_window.mainloop()  # Start the mainloop of the viewinven window
-    app.deiconify()  # Show the main window again after viewinven window is closed
+    view_invent_window.mainloop()  
+    app.deiconify() 
 
 
 title_label = customtkinter.CTkLabel(app, font = font4, text = 'Personal inventory Management\nSystem',text_color='#000000',bg_color='#F6F6F6')
