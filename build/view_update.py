@@ -87,17 +87,14 @@ class UpdateWindow(Toplevel):
 
     def update_item(self):
         id_val = self.id_entry.get()
-        
-        # Check if ID is empty
+
         if not id_val:
             messagebox.showerror('ERROR', 'ENTER ITEM ID')
             return
 
-        # Establish a database connection
         conn = sqlite3.connect('Inventory.db')
         cursor = conn.cursor()
 
-        # Check if item exists
         cursor.execute("SELECT * FROM Inventory WHERE id=?", (id_val,))
         if not cursor.fetchone():
             messagebox.showerror('ERROR', 'Item with ID does not exist')
@@ -118,19 +115,16 @@ class UpdateWindow(Toplevel):
 
             try:
                 qty_val = int(qty_val)
-                
-                # Update item in the database
+
                 update_query = """
                 UPDATE Inventory
                 SET name=?, in_stock=?, importance=?, category=?
                 WHERE id=?
                 """
                 cursor.execute(update_query, (name_val, qty_val, importance_val, categ_val, id_val))
-                
-                # Commit the changes
+
                 conn.commit()
 
-                # Close the connection
                 conn.close()
 
                 print("Database update successful")
